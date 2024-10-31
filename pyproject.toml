@@ -6,7 +6,7 @@ authors = ["jabez <jabezkassa2022@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 python-telegram-bot = "^21.6"
 python-dotenv = "^1.0.1"
 
