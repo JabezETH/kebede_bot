@@ -126,7 +126,7 @@ async def view_data(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     for id, data in existing_data.items():
         await context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(f"data/{data['name']}.jpg", 'rb'))
-        await update.message.reply_text(f" Name: {data['name']} Age: {data['age']} Phone: {data['phone']} Address: {data['address']}")
+        await update.message.reply_text(f" name: {data['name']} phone: {data['phone']} address: {data['address']}")
         time.sleep(1)
     return PRINT_DATA
 
@@ -139,7 +139,7 @@ async def find(update: Update, context: ContextTypes.DEFAULT_TYPE):
     for id, data in existing_data.items():
         if name == data['name']:
             await context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(f"data/{data['name']}.jpg", 'rb'))
-            await update.message.reply_text(f" Name: {data['name']} Age: {data['age']} Phone: {data['phone']} Address: {data['address']}")
+            await update.message.reply_text(f" name: {data['name']} phone: {data['phone']} address: {data['address']}")
             time.sleep(1)
             return ConversationHandler.END
     await update.message.reply_text("Sorry, I couldn't find that name. Please try again.")
