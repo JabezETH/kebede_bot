@@ -128,7 +128,7 @@ async def view_data(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await context.bot.send_photo(chat_id=update.effective_chat.id, photo=open(f"data/{data['name']}.jpg", 'rb'))
         await update.message.reply_text(f" name: {data['name']} phone: {data['phone']} address: {data['address']}")
         time.sleep(1)
-    return PRINT_DATA
+    return ConversationHandler.END
 
 async def search(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Please provide a name")
